@@ -1,247 +1,167 @@
-/* GENERAL PAGE STYLING */
-body {
-    font-family: Arial, sans-serif;
+/* ====================================================
+   CSS Reset & Base Styles
+   ==================================================== */
+   * {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-
-/* HEADER STYLING */
-.header {
-    display: flex;
-    align-items: center;
-    background: #0077b6;
-    color: white;
-    padding: 20px;
-}
-
-.logo {
-    height: 50px;
-    margin-right: 15px;
-}
-
-h1 {
-    font-size: 1.8rem;
-}
-
-/* MAIN CONTAINER */
-.container {
-    width: 95%;
-    max-width: 1100px;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* ====================================================
+     Form & Container Layout
+     ==================================================== */
+  form {
+    width: 97%;
+    max-width: 1600px;
     margin: 20px auto;
-    padding: 20px;
-    background: rgb(255, 255, 255);
-    border-radius: 8px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* MAIN CONTAINER - Fixed Width Behavior */
-.container {
-    width: 100vw; /* Ensures it takes the full viewport width */
-    max-width: 1100px; /* Still limits max width */
-    margin: 20px auto;
-    padding: 20px;
-    background: rgb(255, 255, 255);
-    border-radius: 8px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
-}
-
-/* HUB ATTENDANCE SECTION - Improved Alignment */
-.hub-attendance-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Adjusted for consistent spacing */
-    justify-content: space-between; /* Ensures even spacing */
-    padding: 20px;
-    background: rgb(255, 255, 255);
-    border-radius: 8px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-/* Title now aligns properly with form fields */
-.hub-attendance-title {
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 25px; /* Reduced margin to tighten alignment */
-}
-
-/* Aligning Input Fields with Containers Below */
-.hub-attendance-item {
-    flex: 1;
-    min-width: 270px; /* Matched with .main-section-item for consistency */
-    max-width: 420px; /* Matched with .main-section-item */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Ensuring Label and Input Alignment */
-.hub-attendance-item label {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-/* Consistent Input Styling */
-.hub-attendance-item input {
-    width: 100%;
-    padding: 10px; /* Increased padding slightly for consistency */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    height: 40px; /* Ensures uniform height */
-    box-sizing: border-box; /* Prevents size issues */
-}
-
-/* Responsive Fix for Smaller Screens */
-@media (max-width: 768px) {
-    .hub-attendance-container {
-        flex-direction: column; /* Stacks items for better mobile layout */
-        align-items: center;
+    padding-bottom: 100px; /* Space for sticky buttons */
+  }
+  
+  /* ====================================================
+     Header Styling
+     ==================================================== */
+     .header {
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center; /* centers inline elements inside header */
     }
-
-    .hub-attendance-item {
-        width: 100%;
-        max-width: 400px;
+    
+    .header-content {
+      display: inline-flex; /* shrink-wrap the content */
+      align-items: center;
+      gap: 20px; /* adjust spacing between logo and title */
     }
-}
-
-/* MAIN FORM SECTIONS */
-.main-sections {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-/* INDIVIDUAL FORM SECTIONS */
-.main-section-item {
-    flex: 1;
-    min-width: 270px;
-    max-width: 420px;
-}
-
-/* FOUR-COLUMN GRID LAYOUT */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-/* FORM CARD STYLING */
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* FORM INPUT STYLING */
-label {
-    font-weight: bold;
+    
+  
+  .header .logo {
+    max-width: 250px;
     display: block;
-    margin-bottom: 5px;
-}
-
-input, select, textarea {
+    margin: 0 auto 10px;
+  }
+  
+  /* ====================================================
+     Card Styling
+     ==================================================== */
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  /* Labels & Form Fields */
+  .card label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  .card input[type="text"],
+  .card input[type="date"],
+  .card select,
+  .card textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-
-/* FORM BUTTONS */
-.button-container {
+    border-radius: 4px;
+  }
+  
+  /* ====================================================
+     Hub Attendance Section
+     ==================================================== */
+  .hub-attendance-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .hub-attendance-item {
+    flex: 1 1 45%;
+  }
+  
+  /* ====================================================
+     Block of 3: Demographics, Wellbeing, Experience
+     ==================================================== */
+  .three-block-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .three-block-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* ====================================================
+     Bottom Container: Next Steps & Additional Notes
+     ==================================================== */
+  .bottom-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .bottom-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  /* ====================================================
+     Sticky Button Container
+     ==================================================== */
+  .button-container {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-}
-
-button {
-    background: #0077b6;
-    color: white;
+    gap: 20px;
+    z-index: 100;
+  }
+  
+  .button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
     border: none;
-    padding: 12px 20px;
-    margin: 10px;
+    border-radius: 4px;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #005f8f;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+  }
+  
+  .button-container button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+  }
+  
+  .button-container button[type="button"] {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  /* ====================================================
+     Responsive Adjustments
+     ==================================================== */
+  @media (min-width: 1024px) {
+    form {
+      width: 80%;
     }
-}
-
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .hub-attendance-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hub-attendance-item {
-        width: 100%;
-        max-width: 400px;
-    }
-}
-/* BUTTON CONTAINER - ENSURES VISIBILITY */
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px; /* Adds spacing from form fields */
-    padding: 15px;
-    width: 100%; /* Ensures it stays inside the layout */
-}
-
-/* BUTTONS */
-button {
-    background: #0077b6;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-    display: inline-block; /* Ensures they are properly displayed */
-}
-
-button:hover {
-    background: #005f8f;
-}
-
-/* Ensure Buttons Are Visible on Mobile */
-@media (max-width: 768px) {
-    .button-container {
-        flex-direction: column; /* Stack buttons on small screens */
-        margin-top: 20px;
-    }
-
-    button {
-        width: 80%; /* Makes them wider for better visibility */
-    }
-}
+  }
+  
