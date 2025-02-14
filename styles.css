@@ -9,7 +9,7 @@
   
   body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #c6dcfd;
     color: #333;
     line-height: 1.6;
   }
@@ -164,4 +164,37 @@
       width: 80%;
     }
   }
+  /* Existing styles remain unchanged … */
+
+/* ====================================================
+   Mobile Adjustments
+   ==================================================== */
+@media (max-width: 600px) {
+  /* Stack the logo and title vertically */
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
   
+  /* Optionally reduce the logo size on mobile */
+  .logo {
+    width: 100px; /* adjust as needed */
+  }
+  
+  /* Adjust header title font-size for readability */
+  .header h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  /* For the Hub Attendance section, stack each item vertically */
+  .hub-attendance-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Ensure each Hub Attendance item takes full width */
+  .hub-attendance-item {
+    flex: 1 1 100%;
+  }
+}
